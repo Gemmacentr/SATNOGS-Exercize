@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         maxZoom: 20,
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     });
- 
+
 
 
     var map = L.map('map', {
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'Google': googleLayer,
 
     };
-   
+
 
     L.control.layers(baseLayers, null, { collapsed: false }).addTo(map);
 
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return { lat: Math.random() * 180 - 90, lng: Math.random() * 360 - 180 };
     }
 
-    
+
     // Aggiunge il riquadro con l'orario
     /*var timeBox = L.control({ position: 'topleft' });
     
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
         icon.style.filter = (text.style.display === "none") ? "brightness(1)" : "brightness(1.5)";
     }
 
-  
+
 });
 
 
