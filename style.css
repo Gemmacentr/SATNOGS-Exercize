@@ -1,0 +1,358 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+#typing-text {
+  color: white;
+}
+
+body {
+
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas-container {
+  overflow: hidden;
+}
+
+.text {
+  color: #fff;
+}
+
+.navbar {
+  background-color: #ffff;
+  border-bottom: 2px solid black;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  z-index: 100;
+  position: static;
+
+
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #666666;
+  text-align: center;
+}
+
+
+nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+
+
+
+
+
+.icon-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+
+  /* Larghezza totale delle icone e del testo */
+  z-index: 2;
+  /* Imposta il valore di z-index per le icone */
+}
+
+.icon-container p {
+  font-size: 1.5rem;
+  line-height: 30px;
+}
+
+.iconBox {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.iconBox img {
+  width: 50px;
+  height: 50px;
+
+}
+
+.tooltip {
+  display: none;
+  background-color: #1D2E62;
+  border: 2px;
+  color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  width: 350px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+
+.iconBox:hover {
+  transform: scale(1.1);
+}
+
+.iconBox:hover .tooltip {
+  display: block;
+}
+
+
+
+
+
+
+#textBox {
+  border: 1px solid #000;
+  padding: 10px;
+  line-height: 30px;
+  display: none;
+  /* Inizialmente nascosto */
+  position: absolute;
+  top: 30px;
+  /* Posizione di partenza rispetto all'immagine */
+  left: 0;
+}
+
+
+
+
+.text {
+  font-size: 14px;
+  margin-top: 5px;
+
+}
+
+.text button {
+  margin: auto;
+}
+
+span {
+  padding: 5px;
+}
+
+img.logo {
+  width: 100px;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+
+}
+
+
+.appear-from-top {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: appearFromTop 1s forwards;
+}
+
+.text h1 {
+  font-size: 2.5em;
+  font-family: 'Kanit', sans-serif;
+  line-height: 50px;
+}
+
+.text p {
+  color: #afafaf;
+  max-width: 400px;
+  margin: 1em 0;
+  line-height: 27px;
+
+}
+
+.descriptionContainer {
+  z-index: 5;
+}
+
+@keyframes appearFromTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+.animation-container {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.animation-text {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+
+.animation-text {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+button.aerospace-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #1D2E62;
+  border: 2px solid;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+button.aerospace-button:hover {
+  background-color: #131d3c;
+  color: #ffffff;
+  border: 2px solid;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+@media only screen and (max-width: 800px) {
+
+  /* Stili specifici per schermi con larghezza massima di 600px (modalità mobile) */
+  .navbar {
+    background-color: #ffff;
+    border-top: 2px solid #666666;
+    color: #666666;
+    border-bottom: none;
+
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    font-size: 0.8rem;
+  }
+
+  .icon-container {
+    display: none;
+
+
+  }
+
+  span {
+    padding: 5px;
+  }
+
+  header {
+    height: 80px;
+  }
+
+  .navbar img.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+
+    margin-left: 3.5rem;
+    padding: 15px;
+    width: 120px;
+
+
+  }
+
+  header {
+    grid-template-columns: 1fr;
+
+  }
+
+  .text {
+    text-align: center;
+    order: 1;
+  }
+
+  .canvas-container {
+    order: 2;
+  }
+
+  .text p {
+    margin: 1em auto;
+  }
+
+  #map {
+    height: calc(100vh - 50px);
+    /* Sottrai l'altezza della barra di navigazione */
+
+  }
+
+  .descriptionContainer {
+    z-index: 5;
+  }
+
+
+
+}
+
+@media only screen and (max-width: 400px) and (min-width: 0px) {
+  .navbar {
+    font-size: 0.6rem;
+    padding: 2px,
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .text h1 {
+    font-size: 3.4em;
+  }
+
+  .text p {
+    font-size: 1.1em;
+  }
+}
