@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var linkData = [
         { href: 'Home.html', text: 'Home', icon: 'icon/Navbar.svg' },
         { href: 'Observation.html', text: 'Observations', icon: 'icon/Observations.svg' },
-        { href: 'pagina2.html', text: 'Ground Station', icon: 'icon/Gound.svg' },
+        { href: 'https://network.satnogs.org/stations/', text: 'Ground Station', icon: 'icon/Gound.svg' },
         { href: 'https://community.libre.space/', text: 'Community', icon: 'icon/Community.svg' },
         { href: 'https://wiki.satnogs.org/Main_Page', text: 'Wikipedia', icon: 'icon/Wikipedia.svg' },
         { href: 'https://login.libre.space/login?state=hKFo2SBUSnZmLVE3aXlwN0dyc1JDNXZtRUlQMFFHc2NIamtueKFupWxvZ2luo3RpZNkgT2ZwNGVYVnhIYlc0N3lEeG12Z0duQ3VvWkg2R0NxMGujY2lk2SB3QUEzV0tIWXlqaDRCUXJuWDJsZGV4NjFhc2NoaGFZcg&client=wAA3WKHYyjh4BQrnX2ldex61aschhaYr&protocol=oauth2&redirect_uri=https%3A%2F%2Fnetwork.satnogs.org%2Fcomplete%2Fauth0%3Fredirect_state%3DBbLeCTIj5xBvoYzbo5IsjoEiq5n1Wr6m&response_type=code&scope=openid%20email%20profile', text: 'Sign Up/Login', icon: 'icon/Sign_in.svg' },
@@ -28,16 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
         iconImg.alt = link.text;
         iconImg.classList.add('icon');
 
-        // Set the text content
+
         var textSpan = document.createElement('span');
         textSpan.textContent = link.text;
 
-        // Append the icon and text spans to the link
         a.appendChild(iconImg);
         a.appendChild(textSpan);
 
 
-        // Append the link to the container
         linksContainer.appendChild(a);
     });
 
@@ -82,12 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     L.control.layers(baseLayers, null, { collapsed: false }).addTo(map);
 
-    // Aggiungi un layer mappa di OpenStreetMap
 
-    /* L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-       attribution: '© OpenStreetMap contributors'
-     }).addTo(map);
-   */
 
     var url = 'https://developers.arcgis.com/javascript/latest/sample-code/satellites-3d/live/brightest.txt';
 
@@ -100,10 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => console.error('Error fetching data:', error));
 
     function parseSatelliteData(text) {
-        // Implement the logic to parse the data from the text
-        // and return an array of objects containing satellite information
-        // You may need to adjust this based on the actual format of the data
-        // returned by the API
+
         var lines = text.split('\n');
         var satelliteArray = [];
 
@@ -112,13 +102,10 @@ document.addEventListener('DOMContentLoaded', function () {
             var line1 = lines[i + 1];
             var line2 = lines[i + 2];
 
-            // You may need to extract relevant information from TLE data
-            // and create an object with necessary details
             var satelliteInfo = {
                 name: commonName,
                 line1: line1,
                 line2: line2
-                // Add more properties as needed
             };
 
             satelliteArray.push(satelliteInfo);
@@ -139,33 +126,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function getSatelliteLocation(line1, line2) {
-        // Implement the logic to get satellite location
-        // from TLE data
-        // Return an object with 'lat' and 'lng' properties
-        // based on the actual implementation
+
         return { lat: Math.random() * 180 - 90, lng: Math.random() * 360 - 180 };
     }
 
 
-    // Aggiunge il riquadro con l'orario
-    /*var timeBox = L.control({ position: 'topleft' });
-    
-    timeBox.onAdd = function (map) {
-        var div = L.DomUtil.create('div', 'time-box');
-        div.innerHTML = '<a href="Index.html"><img class="logo_mobile" src="icon/satnogs_net.png" alt="Logo" class="logo"> </a><div id="current-time"></div>';
-        return div;
-    };
-    
-    timeBox.addTo(map);
-*/
 
-    function toggleText() {
-        var text = document.getElementById("hiddenText");
-        text.style.display = (text.style.display === "none") ? "block" : "none";
 
-        var icon = document.querySelector('.icon');
-        icon.style.filter = (text.style.display === "none") ? "brightness(1)" : "brightness(1.5)";
-    }
+
 
 
 });

@@ -48,9 +48,15 @@ header {
   align-items: center;
   height: 80px;
   z-index: 100;
-  position: static;
 
 
+
+}
+
+nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .navbar a {
@@ -60,11 +66,7 @@ header {
 }
 
 
-nav a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 .icon {
   font-size: 24px;
@@ -83,10 +85,8 @@ nav a {
   display: flex;
   justify-content: space-between;
   width: 200px;
-
-  /* Larghezza totale delle icone e del testo */
   z-index: 2;
-  /* Imposta il valore di z-index per le icone */
+
 }
 
 .icon-container p {
@@ -130,31 +130,19 @@ nav a {
   display: block;
 }
 
-
-
-
-
-
 #textBox {
   border: 1px solid #000;
   padding: 10px;
   line-height: 30px;
   display: none;
-  /* Inizialmente nascosto */
   position: absolute;
   top: 30px;
-  /* Posizione di partenza rispetto all'immagine */
+
   left: 0;
 }
 
 
 
-
-.text {
-  font-size: 14px;
-  margin-top: 5px;
-
-}
 
 .text button {
   margin: auto;
@@ -180,7 +168,7 @@ img.logo {
 .appear-from-top {
   opacity: 0;
   transform: translateY(-50px);
-  animation: appearFromTop 1s forwards;
+  animation: appearFromTop 3s forwards;
 }
 
 .text h1 {
@@ -212,18 +200,9 @@ img.logo {
   display: none;
 }
 
-
-
-
-
 .animation-container {
   opacity: 0;
   animation: fadeIn 2s forwards;
-}
-
-.animation-text {
-  font-size: 24px;
-  color: #ffffff;
 }
 
 
@@ -259,12 +238,62 @@ button.aerospace-button:hover {
 }
 
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+table caption {
+  font-size: 1.5em;
+  padding: 10px;
+  text-align: left;
+  background-color: #3498db;
+  color: #fff;
+  border-bottom: 2px solid #2980b9;
+  border-radius: 8px 8px 0 0;
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+table th {
+  background-color: #3498db;
+  color: #fff;
+}
+
+table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 @media only screen and (max-width: 800px) {
 
-  /* Stili specifici per schermi con larghezza massima di 600px (modalità mobile) */
   .navbar {
     background-color: #ffff;
     border-top: 2px solid #666666;
@@ -282,8 +311,6 @@ button.aerospace-button:hover {
 
   .icon-container {
     display: none;
-
-
   }
 
   span {
@@ -292,6 +319,7 @@ button.aerospace-button:hover {
 
   header {
     height: 80px;
+    grid-template-columns: 1fr;
   }
 
   .navbar img.logo {
@@ -305,11 +333,6 @@ button.aerospace-button:hover {
     padding: 15px;
     width: 120px;
 
-
-  }
-
-  header {
-    grid-template-columns: 1fr;
 
   }
 
@@ -328,7 +351,7 @@ button.aerospace-button:hover {
 
   #map {
     height: calc(100vh - 50px);
-    /* Sottrai l'altezza della barra di navigazione */
+
 
   }
 
@@ -343,7 +366,7 @@ button.aerospace-button:hover {
 @media only screen and (max-width: 400px) and (min-width: 0px) {
   .navbar {
     font-size: 0.6rem;
-    padding: 2px,
+    padding: 2px;
   }
 }
 

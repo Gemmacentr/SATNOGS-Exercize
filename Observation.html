@@ -6,25 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Esercizio">
 
-    <!-- Includi jQuery tramite CDN -->
-
-    <!-- Include Leaflet CSS and JS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-    <!-- Include D3.js -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-
-    <!-- Include PapaParse library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-
-    <!-- Other script tags, including your js.js -->
+    <link href="style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js.js"></script>
+
+
 
     <link rel="shortcut icon" href="https://network-satnogs.freetls.fastly.net/static/favicon.ico">
 
 
-    <link href="style.css" rel="stylesheet" type="text/css">
     <title>SatNOGS Network- Observations</title>
 
 </head>
@@ -35,56 +24,57 @@
     <nav>
 
         <div class="navbar" id="links-container">
-            <a href="Index.html"><img class="logo" src="icon/satnogs_net.png" alt="logo"> </a>
+            <div class="mobile-nav">
+                <a href="index.html"><img class="logo" src="icon/satnogs_net.png" alt="logo"> </a>
+            </div>
         </div>
 
     </nav>
 
+    <div id="table-container"></div>
 
+    <script>
+        var data = [
+            { ID: 'Valore1', Satellite: 'Valore2', field3: 'Valore3', Results: 'Valore4', Observer: 'Valore5', Station: 'Valore6' },
+            { field1: 'Valore7', field2: 'Valore8', field3: 'Valore9', field4: 'Valore10', field5: 'Valore11', field6: 'Valore12' },
+            // Aggiungi altri dati secondo necessità
+        ];
 
-    <section>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Cognome</th>
-                    <th>Età</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Mario</td>
-                    <td>Rossi</td>
-                    <td>30</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Laura</td>
-                    <td>Bianchi</td>
-                    <td>25</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Giuseppe</td>
-                    <td>Verdi</td>
-                    <td>40</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Anna</td>
-                    <td>Neri</td>
-                    <td>28</td>
-                </tr>
-            </tbody>
-        </table>
+        // Creazione della tabella dinamicamente
+        var tableContainer = document.getElementById('table-container');
+        var table = document.createElement('table');
 
-    </section>
+        // Intestazione
+        var thead = document.createElement('thead');
+        var headerRow = document.createElement('tr');
+        for (var key in data[0]) {
+            if (data[0].hasOwnProperty(key)) {
+                var th = document.createElement('th');
+                th.textContent = key;
+                headerRow.appendChild(th);
+            }
+        }
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
 
+        // Dati
+        var tbody = document.createElement('tbody');
+        data.forEach(function (item) {
+            var row = document.createElement('tr');
+            for (var key in item) {
+                if (item.hasOwnProperty(key)) {
+                    var td = document.createElement('td');
+                    td.textContent = item[key];
+                    row.appendChild(td);
+                }
+            }
+            tbody.appendChild(row);
+        });
+        table.appendChild(tbody);
 
-
-    </section>
+        // Aggiungi la tabella al container
+        tableContainer.appendChild(table);
+    </script>
 
 </body>
 
