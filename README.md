@@ -1,1 +1,1 @@
-# SATNOGS-Exercize
+# SATNOGS-Exercise
