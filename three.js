@@ -1,4 +1,4 @@
-import * as Three from 'https://cdn.skypack.dev/three@0.134.0';
+import * as Three from 'https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.module.js';
 
 import { OrbitControls } from "https://threejsfundamentals.org/threejs/resources/threejs/r110/examples/jsm/controls/OrbitControls.js";
 
